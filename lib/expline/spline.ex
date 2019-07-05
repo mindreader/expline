@@ -232,7 +232,7 @@ defmodule Expline.Spline do
   defp make_ranges(xs) do
     xs
     |> Enum.sort
-    |> Enum.chunk(2, 1)
+    |> Enum.chunk_every(2, 1, :discard)
     |> Enum.map(fn ([x1, x2]) -> {x1, x2} end)
   end
 
